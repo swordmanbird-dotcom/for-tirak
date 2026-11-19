@@ -799,8 +799,10 @@ $('#sendAns').onclick=async e=>{
   const text=`💌 คำตอบจากที่รัก · ครบรอบ 1 ปี ☄️\n\n💗 รักเขา: ${love}/10 ${'❤️'.repeat(Math.min(love,10))}\n💍 จะรอเขาไหม: ${waitAns||'รอสิ'}\n🌠 ปีหน้าอยากทำด้วยกัน: ${[...pick2].join(', ')||'-'}\n🫶 อยากบอกเขา: ${[...pick3].join(', ')||'-'}${msg?`\n\n📝 ${msg}`:''}`;
   const[x,y]=center(e.currentTarget);play('burst',x,y,220);pop(x,y,30,{up:true});
   let sent=false;
-  /* LINE's own friend/chat list pops up, she picks เขา and sends */
-  if(liffReady&&(liff.isInClient()||liff.isLoggedIn())&&liff.isApiAvailable('shareTargetPicker')){
+  /* opened from his chat inside LINE: goes straight into that chat */
+  if(liffReady&&liff.isInClient()){try{const c=liff.getContext();if(c&&(c.type==='utou'||c.type==='group'||c.type==='room')){await liff.sendMessages([{type:'text',text}]);sent=true}}catch(err){}}
+  /* otherwise LINE's own friend list pops up, she picks เขา and sends */
+  if(!sent&&liffReady&&(liff.isInClient()||liff.isLoggedIn())&&liff.isApiAvailable('shareTargetPicker')){
     try{const res=await liff.shareTargetPicker([{type:'text',text}],{isMultiple:false});
       if(!res){$('#sendNote').innerHTML='ยังไม่ได้ส่งเลยน้า 🥺<br>กดอีกครั้ง แล้วเลือกชื่อ “เขา” นะ';return}sent=true}catch(err){}}
   if(!sent){try{await navigator.clipboard.writeText(text)}catch(_){}
