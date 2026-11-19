@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3d6ec">
+<title>ดาวหางของที่รัก ☄️</title>
+<meta property="og:title" content="ดาวหางของที่รัก ☄️">
+<meta property="og:description" content="ของขวัญครบรอบ 1 ปี จาก เขา ถึง ที่รัก">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&family=Sriracha&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#6a3b52;--soft:#8a5672;--rose:#ff6f9c;--deep:#e2457a;--card:rgba(255,250,252,.92);--shadow:0 12px 34px rgba(190,70,120,.18)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;color:var(--ink);font-family:'Mali',system-ui,sans-serif;-webkit-user-select:none;user-select:none;touch-action:manipulation}
+body{background:#f3dcef}
+img{-webkit-user-drag:none;user-select:none}
+.bg{position:fixed;inset:0;z-index:0;background:url(assets/bg.jpg) center/cover no-repeat,linear-gradient(180deg,#d9cdf7,#f2d3ee 45%,#ffd9de 80%,#ffe8e0)}
+.night{position:fixed;inset:0;z-index:1;background:radial-gradient(ellipse at 50% 40%,rgba(70,40,110,.55),rgba(30,15,50,.85));opacity:0;transition:opacity 1.6s;pointer-events:none}
+.night.on{opacity:1}
+#fx,#fxTop{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+#fx{z-index:1}#fxTop{z-index:95}
+.app{position:fixed;left:50%;top:0;transform:translateX(-50%);width:min(100vw,460px);height:100%;height:100dvh;z-index:2}
+.scene{position:absolute;inset:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;display:flex;flex-direction:column;align-items:center;
+  padding:calc(62px + env(safe-area-inset-top)) 18px calc(28px + env(safe-area-inset-bottom));
+  opacity:0;visibility:hidden;transform:translateY(18px) scale(.97);transition:opacity .7s,transform .8s cubic-bezier(.2,.9,.3,1.1),visibility 0s .8s}
+.scene.on{opacity:1;visibility:visible;transform:none;transition:opacity .9s .2s,transform 1s cubic-bezier(.2,.9,.3,1.1) .2s,visibility 0s}
+.scene.shaking{animation:scrShake .45s}
+@keyframes scrShake{20%{transform:translate(-7px,3px)}40%{transform:translate(6px,-4px)}60%{transform:translate(-5px,2px)}80%{transform:translate(4px,-2px)}}
+.inner{margin:auto 0;width:100%;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.title{font-family:'Sriracha','Mali',cursive;color:var(--deep);line-height:1.55;font-size:clamp(25px,7.6vw,34px);text-shadow:0 2px 0 #fff,0 0 18px rgba(255,255,255,.85)}
+.h2{font-family:'Sriracha','Mali',cursive;color:var(--deep);font-size:clamp(20px,6vw,26px);line-height:1.55;text-shadow:0 1px 0 #fff,0 0 12px rgba(255,255,255,.8)}
+.sub{color:var(--soft);font-size:clamp(14px,4vw,16px);line-height:1.75;text-shadow:0 1px 0 rgba(255,255,255,.9),0 0 10px rgba(255,255,255,.9)}
+.tiny{font-size:12.5px;color:var(--soft);line-height:1.6;text-shadow:0 0 8px rgba(255,255,255,.95)}
+.pill{display:inline-block;padding:4px 14px;border-radius:99px;background:rgba(255,255,255,.8);color:var(--deep);font-size:13px;line-height:1.6}
+.btn{font-family:'Mali',sans-serif;font-weight:600;font-size:clamp(15px,4.3vw,17px);line-height:1.5;border:0;cursor:pointer;padding:12px 26px;border-radius:99px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#ff9cbc,#ff5f92);box-shadow:0 8px 20px rgba(255,95,146,.35),inset 0 2px 0 rgba(255,255,255,.45),inset 0 -3px 0 rgba(0,0,0,.07);transition:transform .15s}
+.btn:active{transform:scale(.94)}
+.btn.lite{background:rgba(255,255,255,.94);color:var(--deep);box-shadow:var(--shadow)}
+.btn:disabled{opacity:.5}
+.btn:not(.lite):after{content:'';position:absolute;top:0;left:-70%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);animation:shine 3s infinite}
+@keyframes shine{0%,55%{left:-70%}100%{left:140%}}
+.card{background:var(--card);border-radius:26px;box-shadow:var(--shadow);border:2px solid rgba(255,255,255,.95)}
+.hide{display:none!important}
+.stk{display:block;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(180,70,110,.22))}
+.bob{animation:bob 3.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+.beat{transform:scale(calc(1 + var(--b,0)*.07))}
+.wiggle{animation:wiggle .7s}
+@keyframes wiggle{0%,100%{transform:rotate(0)}20%{transform:rotate(-12deg)}40%{transform:rotate(10deg)}60%{transform:rotate(-7deg)}80%{transform:rotate(5deg)}}
+.shake{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+.popin{animation:popin .6s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes popin{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}
+.story{width:100%;padding:20px 18px;text-align:left;font-size:clamp(15px,4.3vw,17px);line-height:1.95;white-space:pre-line}
+.story b{color:var(--deep)}
+.cur{display:inline-block;width:2px;height:1.05em;background:var(--rose);vertical-align:-2px;margin-left:2px;animation:blink .8s infinite}
+@keyframes blink{50%{opacity:.3}}
+
+#music{position:fixed;z-index:90;top:calc(10px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);display:none;align-items:center;gap:8px;max-width:min(92vw,420px);
+  padding:5px 14px 5px 5px;border-radius:99px;border:0;background:rgba(255,255,255,.85);box-shadow:var(--shadow);font-family:'Mali';color:var(--ink);font-size:12.5px;cursor:pointer}
+#music.show{display:flex}
+#music img{width:32px;height:32px;object-fit:contain}
+#music.playing img{animation:spin 6s linear infinite}
+#music span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@keyframes spin{to{transform:rotate(360deg)}}
+#loader{position:fixed;inset:0;z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(180deg,#e3d6fb,#ffdfe6);transition:opacity .6s}
+#loader.out{opacity:0;pointer-events:none}
+#loader img{width:120px;animation:bob 1.4s ease-in-out infinite}
+#loader .bar{width:160px;height:8px;border-radius:8px;background:#fff;overflow:hidden}
+#loader .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff9cbc,#ff5f92);transition:width .2s}
+
+.jar{width:min(56vw,36vh,240px);cursor:pointer}
+.tapme{animation:blink 1.6s infinite}
+.lockimg{width:min(34vw,21vh,140px)}
+.wheels{display:flex;gap:clamp(8px,3vw,14px);justify-content:center}
+.wheel{display:flex;flex-direction:column;align-items:center;gap:6px}
+.wheel button{width:clamp(48px,15vw,60px);height:34px;border:0;border-radius:14px;background:rgba(255,255,255,.8);color:var(--deep);font-size:16px;cursor:pointer;box-shadow:0 3px 8px rgba(190,70,120,.12)}
+.digit{width:clamp(52px,16vw,66px);height:clamp(66px,20vw,82px);border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(#fff,#ffeef4);box-shadow:inset 0 3px 8px rgba(190,70,120,.15),0 6px 14px rgba(190,70,120,.15);border:2px solid #fff;touch-action:none}
+.digit .strip{position:absolute;left:0;right:0;top:0;transition:transform .35s cubic-bezier(.3,1.3,.5,1)}
+.digit .strip div{height:clamp(66px,20vw,82px);display:flex;align-items:center;justify-content:center;font-size:clamp(30px,10vw,40px);font-weight:700;color:var(--deep)}
+.hint{background:rgba(255,255,255,.78);border-radius:16px;padding:8px 14px}
+
+.arena{width:100%;padding:14px 12px 16px;display:grid;grid-template-columns:1fr 1fr;column-gap:10px;row-gap:8px}
+.who{font-size:13px;font-weight:600;line-height:1.5}
+.hp{height:12px;border-radius:12px;background:#ffe3ec;overflow:hidden;box-shadow:inset 0 1px 3px rgba(0,0,0,.08)}
+.hp i{display:block;height:100%;width:100%;border-radius:12px;background:linear-gradient(90deg,#ff9cbc,#ff4f86);transition:width .6s cubic-bezier(.3,1.2,.5,1)}
+.hp.wall i{background:linear-gradient(90deg,#b9a2ff,#7f6bff)}
+.bub{min-height:74px;display:flex;align-items:flex-end;justify-content:center}
+.bub div{position:relative;max-width:100%;padding:10px 14px 16px;font-size:clamp(13px,3.7vw,15px);line-height:1.55;font-weight:600;color:var(--ink);
+  background:url(assets/fx/bubble.webp) center/100% 100% no-repeat;min-width:100px;animation:popin .45s cubic-bezier(.2,1.4,.4,1) both}
+.bub.her div{color:#7a2ad0}
+.fighter{position:relative;display:flex;justify-content:center;align-items:flex-end;height:min(34vw,22vh,150px)}
+.fighter img.stk{height:100%;width:auto;max-width:100%}
+.fighter .shield{position:absolute;left:50%;top:50%;width:105%;height:105%;transform:translate(-50%,-50%);object-fit:contain;opacity:.7;transition:opacity .4s;pointer-events:none}
+.dmg{position:absolute;left:50%;top:10%;transform:translateX(-50%);font-weight:700;color:#e2457a;font-size:18px;white-space:nowrap;animation:dmg 1.2s forwards;pointer-events:none;text-shadow:0 2px 0 #fff}
+@keyframes dmg{to{transform:translate(-50%,-48px);opacity:0}}
+.narr{grid-column:1/-1;font-size:clamp(14px,4vw,16px);line-height:1.75;min-height:3.6em;color:var(--ink);padding:4px 2px}
+.acts{display:flex;flex-direction:column;gap:9px;width:100%;align-items:center}
+.acts .btn{width:100%}
+.mash{width:clamp(110px,34vw,140px);aspect-ratio:1;border:0;background:none;cursor:pointer;position:relative}
+.mash img{width:100%;height:100%;object-fit:contain;transition:transform .08s}
+.mash:active img{transform:scale(.86)}
+.mash span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;text-shadow:0 2px 4px rgba(200,40,90,.7);padding-bottom:8px}
+
+.gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.gift{border:0;background:var(--card);border-radius:22px;padding:10px 6px 8px;box-shadow:var(--shadow);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:'Mali';color:var(--deep);font-weight:600;font-size:13px;line-height:1.5;transition:transform .3s}
+.gift img{width:100%;aspect-ratio:1;object-fit:contain;filter:blur(7px) saturate(.5);opacity:.55;transition:.6s}
+.gift.open img{filter:drop-shadow(0 6px 10px rgba(180,70,110,.25));opacity:1}
+.gift.open{transform:translateY(-4px)}
+.gift .q{font-size:12px;color:var(--soft)}
+
+.sky{position:relative;width:min(88vw,400px,60vh);aspect-ratio:1}
+.sky .dot{position:absolute;width:clamp(16px,5vw,22px);transform:translate(-50%,-50%);opacity:.35;transition:opacity .6s,transform .6s;pointer-events:none}
+.sky .dot.on{opacity:1;transform:translate(-50%,-50%) scale(1.3)}
+.star{position:absolute;width:clamp(42px,12.5vw,54px);aspect-ratio:1;transform:translate(-50%,-50%);border:0;background:none;cursor:pointer;padding:0}
+.star img{width:100%;height:100%;object-fit:contain;position:absolute;inset:0;transition:opacity .5s}
+.star .on{opacity:0}
+.star.done .on{opacity:1}.star.done .off{opacity:0}
+.star.next{animation:twk 1.1s ease-in-out infinite}
+.star.next .off{filter:drop-shadow(0 0 8px #fff3a0) brightness(1.15)}
+.star .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#6a3b52;padding-top:4px}
+@keyframes twk{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.22)}}
+.sky .mid{position:absolute;left:50%;top:52%;width:32%;transform:translate(-50%,-50%);pointer-events:none}
+#sheet{position:fixed;inset:0;z-index:80;display:flex;align-items:flex-end;justify-content:center;visibility:hidden}
+#sheet .dim{position:absolute;inset:0;background:rgba(90,40,70,.35);opacity:0;transition:opacity .4s}
+#sheet .panel{position:relative;width:min(100vw,460px);max-height:88dvh;overflow-y:auto;border-radius:30px 30px 0 0;background:linear-gradient(#fffafc,#fff1f6);box-shadow:0 -10px 40px rgba(150,50,90,.25);
+  padding:16px 22px calc(22px + env(safe-area-inset-bottom));transform:translateY(105%);transition:transform .55s cubic-bezier(.2,.9,.3,1.05)}
+#sheet.open{visibility:visible}#sheet.open .dim{opacity:1}#sheet.open .panel{transform:none}
+.grab{width:46px;height:5px;border-radius:5px;background:#ffc8da;margin:0 auto 10px}
+.sh-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.sh-head img{width:clamp(78px,22vw,98px);height:clamp(78px,22vw,98px);flex:none}
+.sh-text{font-size:clamp(15px,4.3vw,17px);line-height:1.95;white-space:pre-line;min-height:9em;text-align:left;padding:6px 2px 4px}
+.sh-text b{color:var(--deep)}
+.sh-foot{display:flex;justify-content:center;padding-top:10px;min-height:58px;align-items:center}
+
+.photos{display:flex;gap:14px;justify-content:center;width:100%;padding-top:16px}
+.ph{width:min(40vw,175px);background:#fff;padding:8px 8px 6px;border-radius:6px;box-shadow:0 12px 24px rgba(150,50,90,.2);transform-origin:50% 0;animation:swing 4s ease-in-out infinite;position:relative;cursor:pointer}
+.ph:nth-child(2){animation-delay:-2s;margin-top:20px}
+.ph .bow{position:absolute;top:-24px;left:50%;width:58px;transform:translateX(-50%);pointer-events:none}
+.ph .pimg{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:3px}
+.ph .cap{font-family:'Sriracha',cursive;font-size:clamp(14px,4vw,16px);color:var(--ink);padding-top:6px;line-height:1.5}
+@keyframes swing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+#zoom{position:fixed;inset:0;z-index:85;background:rgba(60,25,45,.75);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:.35s}
+#zoom.on{opacity:1;visibility:visible}
+#zoom img{max-width:100%;max-height:82dvh;border-radius:14px;border:6px solid #fff}
+.reasons{width:100%;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 14px;scrollbar-width:none}
+.reasons::-webkit-scrollbar{display:none}
+.reason{flex:0 0 80%;scroll-snap-align:center;padding:16px 14px;text-align:left;display:flex;gap:12px;align-items:center}
+.reason img{width:64px;height:64px;flex:none}
+.reason p{font-size:clamp(14px,4vw,15.5px);line-height:1.75}
+
+.dream{width:100%;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.dream img{width:min(46vw,26vh,190px);height:min(46vw,26vh,190px)}
+.dream p{font-size:clamp(15px,4.3vw,17px);line-height:1.9;white-space:pre-line}
+.dream b{color:var(--deep)}
+.reveal{opacity:0;transform:translateY(24px) scale(.97);transition:opacity .9s,transform .9s cubic-bezier(.2,.9,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* wish */
+.wishbtn{position:relative;width:min(60vw,36vh,240px);aspect-ratio:1;border:0;background:none;cursor:pointer;touch-action:none;-webkit-touch-callout:none}
+.wishbtn .ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(#ffd36e calc(var(--p,0)*1%),rgba(255,255,255,.35) 0);
+  -webkit-mask:radial-gradient(circle,transparent 62%,#000 63%);mask:radial-gradient(circle,transparent 62%,#000 63%)}
+.wishbtn img{position:absolute;inset:14%;width:72%;height:72%;object-fit:contain;transition:transform .2s}
+.wishbtn.hold img{transform:scale(1.1);filter:drop-shadow(0 0 20px #fff3a0)}
+.wishtxt{font-size:clamp(14px,4vw,16px);color:#fff;line-height:1.75;text-shadow:0 2px 8px rgba(60,20,60,.6)}
+
+/* cinematic words */
+#s-words .line{font-family:'Sriracha','Mali',cursive;color:#fff;font-size:clamp(22px,7vw,32px);line-height:1.6;text-shadow:0 0 18px rgba(255,170,210,.9),0 2px 6px rgba(60,20,60,.5);
+  min-height:5.2em;display:flex;align-items:center;justify-content:center;padding:0 6px;white-space:pre-line}
+#s-words .line span{animation:wordIn 1.2s cubic-bezier(.2,.9,.3,1) both}
+@keyframes wordIn{from{opacity:0;filter:blur(8px);transform:translateY(14px) scale(.96)}to{opacity:1;filter:none;transform:none}}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:280px}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);transition:.3s}
+.dots i.on{background:#ffd36e;box-shadow:0 0 8px #ffd36e}
+.taphint{color:rgba(255,255,255,.85);font-size:13px;animation:blink 1.6s infinite}
+
+/* scratch */
+.scratch{position:relative;width:min(84vw,340px);aspect-ratio:.82;border-radius:28px;overflow:hidden;box-shadow:0 18px 40px rgba(150,50,90,.3);background:linear-gradient(#fffafc,#ffeaf2)}
+.scratch .under{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px;text-align:center}
+.scratch .under img{width:62%}
+.scratch .under p{font-family:'Sriracha',cursive;color:var(--deep);font-size:clamp(19px,5.6vw,24px);line-height:1.55}
+.scratch canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;transition:opacity 1s}
+.scratch canvas.gone{opacity:0;pointer-events:none}
+.answers{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;min-height:52px;position:relative}
+
+.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%}
+.counter div{background:rgba(255,255,255,.9);border-radius:18px;padding:8px 4px;box-shadow:var(--shadow)}
+.counter b{display:block;font-size:clamp(20px,6.4vw,28px);color:var(--deep);line-height:1.4}
+.counter small{font-size:11.5px;color:var(--soft)}
+.sendheart{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 18px;width:100%}
+.sendheart button{border:0;background:none;width:92px;height:92px;cursor:pointer}
+.sendheart button img{width:100%;height:100%;object-fit:contain;transition:transform .1s}
+.sendheart button:active img{transform:scale(.85)}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="night" id="night"></div>
+<canvas id="fx"></canvas>
+<div id="loader"><img src="assets/stk/comet.webp" alt=""><div class="sub">กำลังเตรียมของขวัญให้ที่รัก…</div><div class="bar"><i id="ldBar"></i></div></div>
+<button id="music"><img src="assets/stk/moon.webp" alt=""><span>♪ ดาวหางฮัลเลย์ — fellow fellow</span></button>
+
+<main class="app">
+
+<section class="scene on" id="s-intro"><div class="inner">
+  <span class="pill">20 · 11 · ครบรอบ 1 ปี ของเรา</span>
+  <h1 class="title">ดาวหางดวงนี้<br>ตั้งใจมาหา “ที่รัก”</h1>
+  <img class="stk jar bob" id="jar" src="assets/stk/jar.webp" alt="">
+  <p class="sub tapme">แตะที่โหลแก้ว เพื่อปล่อยความรักออกมานะ</p>
+  <p class="tiny">เปิดเสียงด้วยนะ 🎧<br>ใช้เวลาหน่อยนะ แต่เขาตั้งใจทำให้ที่รักมากๆ เลย</p>
+</div></section>
+
+<section class="scene" id="s-lock"><div class="inner">
+  <img class="stk lockimg bob" id="lockImg" src="assets/stk/lock.webp" alt="">
+  <h2 class="h2">กุญแจหัวใจของเรา</h2>
+  <p class="sub">หมุนตัวเลขให้เป็น “วันครบรอบของเรา” นะ<br><span class="tiny">(กดลูกศร หรือปัดขึ้นลงที่ตัวเลขก็ได้)</span></p>
+  <div class="wheels" id="wheels"></div>
+  <p class="tiny hint" id="hint">คำใบ้: วันที่ + เดือน ที่เราครบรอบกัน 💕</p>
+  <button class="btn" id="unlock">ปลดล็อก</button>
+</div></section>
+
+<section class="scene" id="s-pro"><div class="inner">
+  <span class="pill">ตอนที่ 1 · ย้อนกลับไปตอนจีบ</span>
+  <img class="stk bob" src="assets/stk/phone.webp" style="width:min(38vw,22vh,160px)" alt="">
+  <div class="card story" id="proText"></div>
+  <button class="btn hide" id="proNext">เข้าสู่ภารกิจ ⚔️</button>
+</div></section>
+
+<section class="scene" id="s-battle"><div class="inner">
+  <h2 class="h2" id="batTitle">ภารกิจ: พิชิตใจที่รัก</h2>
+  <div class="card arena">
+    <div><div class="who">เขา 🧸</div><div class="hp"><i id="hpMe"></i></div></div>
+    <div><div class="who">กำแพงใจที่รัก 🎀</div><div class="hp wall"><i id="hpHer"></i></div></div>
+    <div class="bub me" id="bubMe"></div>
+    <div class="bub her" id="bubHer"></div>
+    <div class="fighter" id="fMe"><img class="stk" id="imgMe" src="assets/stk/phone.webp" alt=""></div>
+    <div class="fighter" id="fHer"><img class="stk" id="imgHer" src="assets/stk/ulti.webp" alt=""><img class="shield" id="shield" src="assets/fx/shield.webp" alt=""></div>
+    <div class="narr" id="narr">เลือกข้อความที่จะส่งหาที่รักกันเลย…</div>
+  </div>
+  <div class="acts" id="acts"></div>
+</div></section>
+
+<section class="scene" id="s-meet"><div class="inner">
+  <span class="pill">ตอนที่ 2 · และแล้ว… วันนั้นก็มาถึง</span>
+  <h2 class="h2">วันแรกที่เราได้เจอกัน</h2>
+  <p class="sub">แตะเปิดความทรงจำทีละกล่องนะ</p>
+  <div class="gifts" id="gifts">
+    <button class="gift" data-k="0"><img src="assets/stk/hand.webp" alt=""><span>ครั้งแรก…</span><span class="q">แตะเลย</span></button>
+    <button class="gift" data-k="1"><img src="assets/stk/kiss.webp" alt=""><span>ครั้งแรก…</span><span class="q">แตะเลย</span></button>
+    <button class="gift" data-k="2"><img src="assets/stk/hug.webp" alt=""><span>ครั้งแรก…</span><span class="q">แตะเลย</span></button>
+  </div>
+  <div class="card story" id="meetText" style="min-height:7em">วันที่เราได้เจอกันครั้งแรก ในชีวิตจริง…</div>
+  <button class="btn hide" id="meetNext">ไปต่อ 💗</button>
+</div></section>
+
+<section class="scene" id="s-sky"><div class="inner">
+  <span class="pill">ตอนที่ 3 · กลุ่มดาวของเรา</span>
+  <p class="sub" id="skyMsg">แตะดาวดวงที่กระพริบ ทีละดวงนะ<br>ดาวทุกดวงเก็บเรื่องที่เขาอยากบอกที่รักไว้</p>
+  <div class="sky" id="sky"><img class="stk mid" src="assets/stk/hug.webp" alt=""></div>
+  <div style="min-height:56px;display:flex;align-items:center" id="skyNext"></div>
+</div></section>
+
+<section class="scene" id="s-photo"><div class="inner">
+  <span class="pill">ตอนที่ 4 · ความทรงจำของเรา</span>
+  <div class="photos">
+    <div class="ph" data-src="assets/photo1.jpg"><img class="bow" src="assets/fx/bow.webp" alt=""><img class="pimg" src="assets/photo1.jpg" alt=""><div class="cap">ยิ้มได้ทุกครั้งที่มีที่รัก</div></div>
+    <div class="ph" data-src="assets/photo2.jpg"><img class="bow" src="assets/fx/bow.webp" alt=""><img class="pimg" src="assets/photo2.jpg" alt=""><div class="cap">คนสวยของเขา 🌹</div></div>
+  </div>
+  <p class="tiny">แตะรูปเพื่อดูใกล้ๆ · ปัดการ์ดข้างล่างไปทางซ้ายนะ</p>
+  <div class="reasons" id="reasons"></div>
+  <button class="btn" id="toDream">ความฝันของเขา ☁️</button>
+</div></section>
+
+<section class="scene" id="s-dream"><div class="inner" style="margin-top:0">
+  <span class="pill">ตอนที่ 5 · ความฝันของเขา</span>
+  <p class="sub">เลื่อนลงช้าๆ นะ…</p>
+  <div class="card dream reveal"><img class="stk bob" src="assets/stk/sleep.webp" alt=""><p>เป้าหมายของเขาไม่ได้ยิ่งใหญ่อะไรเลย…
+แค่อยากใช้ชีวิตร่วมกับที่รัก
+
+ตื่นมาก็เจอที่รัก <b>เป็นคนแรกของวันใหม่</b>
+ก่อนนอนก็เจอที่รัก <b>เป็นคนสุดท้ายในทุกคืน</b>
+ทุกวัน ทุกคืน ไปจนแก่เฒ่าเลยนะ</p></div>
+  <div class="card dream reveal"><img class="stk bob" src="assets/stk/wedding.webp" alt=""><p>และเมื่อถึงวันนั้น…
+วันที่ที่รักใส่ชุดเจ้าสาว เดินเข้ามาหาเขา
+
+เขาคงร้องไห้หนักมากแน่ๆ เลย 🥹
+เพราะผู้หญิงในฝันของเขาตั้งแต่เด็กๆ
+กำลังจะได้เป็นภรรยาของเขาจริงๆ</p></div>
+  <div class="card dream reveal"><img class="stk bob" src="assets/stk/happy.webp" alt=""><p>แต่ก่อนจะถึงวันนั้น…
+เขามีอะไรอยากขอกับดาวหางสักอย่าง</p></div>
+  <button class="btn reveal" id="toWish">ไปขอพรกับดาวหางกัน ☄️</button>
+</div></section>
+
+<section class="scene" id="s-wish"><div class="inner">
+  <span class="pill">ตอนที่ 6 · คำอธิษฐาน</span>
+  <p class="wishtxt" id="wishTxt">ว่ากันว่า ถ้าได้เห็นดาวหาง แล้วอธิษฐาน<br>คำขอนั้นจะเป็นจริงเสมอ…<br><b>กดค้างไว้ที่ดาวหาง แล้วอธิษฐานพร้อมกันนะ</b></p>
+  <button class="wishbtn" id="wish"><div class="ring"></div><img src="assets/stk/comet.webp" alt=""></button>
+  <p class="wishtxt" id="wishPct" style="font-size:14px">0%</p>
+</div></section>
+
+<section class="scene" id="s-words"><div class="inner" id="wordsBox" style="cursor:pointer">
+  <div class="line" id="line"></div>
+  <div class="dots" id="wdots"></div>
+  <p class="taphint" id="wtap">แตะที่หน้าจอเพื่อฟังคำอธิษฐานของเขา</p>
+</div></section>
+
+<section class="scene" id="s-scratch"><div class="inner">
+  <span class="pill">คำถามสุดท้าย</span>
+  <p class="sub">ใช้นิ้วขูดเมฆออกเบาๆ นะ… ☁️</p>
+  <div class="scratch" id="scratchBox">
+    <div class="under"><img class="stk" src="assets/stk/ring.webp" alt=""><p>ที่รักจะรอเขาไหม…<br>รอวันที่เขาพร้อม<br>แล้วไปขอที่รักแต่งงาน</p></div>
+    <canvas id="scratch"></canvas>
+  </div>
+  <div class="answers hide" id="answers">
+    <button class="btn" data-a="yes">รอสิ 💗</button>
+    <button class="btn" data-a="yes">รอแน่นอน 💍</button>
+    <button class="btn lite" id="noWait">ไม่รอ</button>
+  </div>
+</div></section>
+
+<section class="scene" id="s-end"><div class="inner" style="margin-top:0">
+  <img class="stk popin" src="assets/stk/kiss.webp" style="width:min(50vw,28vh,210px)" alt="">
+  <div class="title beat">รักที่รักที่สุดในโลก</div>
+  <p class="sub">เขาสัญญา ว่าจะรักษาความรักครั้งสุดท้ายนี้<br>ไว้ให้ยาวนาน จนถึงวันสุดท้ายของชีวิตเขา</p>
+  <p class="tiny">เราอยู่ด้วยกันมาแล้ว</p>
+  <div class="counter" id="counter"></div>
+  <div class="card sendheart">
+    <p class="sub" style="text-shadow:none">ถ้าอ่านจบแล้ว ส่งหัวใจกลับมาให้เขาหน่อยนะ 🥺</p>
+    <button id="sendHeart" aria-label="ส่งหัวใจ"><img src="assets/fx/heart2.webp" alt=""></button>
+    <p class="h2" style="font-size:20px;text-shadow:none" id="heartCount">0 ดวง</p>
+  </div>
+  <p class="sub">— จาก เขา คนที่รักที่รักที่สุด 🧸</p>
+  <button class="btn lite" id="replay">ดูอีกครั้ง ↺</button>
+</div></section>
+
+</main>
+
+<div id="sheet"><div class="dim"></div><div class="panel">
+  <div class="grab"></div>
+  <div class="sh-head"><img class="stk bob" id="shImg" alt=""><div style="text-align:left"><div class="tiny" id="shChap" style="text-shadow:none"></div><div class="h2" id="shTitle" style="text-shadow:none"></div></div></div>
+  <div class="sh-text" id="shText"></div>
+  <div class="sh-foot" id="shFoot"></div>
+</div></div>
+<div id="zoom"><img alt=""></div>
+<canvas id="fxTop"></canvas>
+<audio id="bgm" src="assets/music.mp4" loop preload="auto" playsinline></audio>
+
+<script>
+const CONFIG={passcode:"2011",startDate:"2025-11-20",bpm:80};
+
+/* ================= เนื้อหา ================= */
+const PROLOGUE=`ย้อนกลับไปตอนที่เขาเริ่มจีบที่รักใหม่ๆ นะ…
+
+พูดตามตรงเลย <b>ที่รักจีบยากมากกกกก</b> 😂
+
+ทุกครั้งที่เขาทักไปถามว่า “ทำอะไรอยู่” หรือ “กินข้าวยัง”
+ที่รักก็จะเปิด <b>อัลติ ท่าไม้ตาย</b> ใส่เขาทุกที
+“ถามทำไม” “ถามเยอะไปแล้วนะ”
+
+จนเขาเหว่อไปหลายรอบเลย 🥲
+ไหนลองมาย้อนดูกันหน่อย ว่าตอนนั้นเป็นยังไง…`;
+const ROUNDS=[
+  {me:"ทำอะไรอยู่ครับ 🥺",her:"ถามทำไม?",narr:"ที่รักใช้ท่าไม้ตาย “ถามทำไม”!! หัวใจเขาเจ็บไป 30 😵"},
+  {me:"กินข้าวยังครับ 🍚",her:"ถามเยอะไปแล้วนะ!",narr:"คริติคอล!! “ถามเยอะไปแล้วนะ” เขาเหว่อหนักมาก 🥲"},
+  {me:"ฝันดีนะครับ 🌙",her:"อืม",narr:"“อืม” คำเดียว… แต่เจ็บกว่าโดนอัลติอีก 💔"}
+];
+const DESPAIR=`มีหลายครั้งนะ ที่เขาท้อ…
+หลายคืนที่นอนคิดว่า <b>ที่รักคงไม่ชอบเขาแน่ๆ</b>
+หรือเขาอาจจะไม่มีหวังแล้วจริงๆ
+
+แต่คิดทีไร… ก็ปวดหัวใจทุกที
+
+เขาไม่รู้เหมือนกันว่าอะไรมาดลใจ
+ให้เขาอยากไปต่อ อยากลองทุ่มอีกสักครั้ง
+ใช้ความจริงใจให้สุดกำลังที่มี
+
+แอบมีความหวังเล็กๆ ว่าสักวัน…
+ที่รักจะมองเห็นความรักที่เขามีให้บ้าง`;
+const MEET=[
+  {t:"จูงมือ",x:`ครั้งแรกที่ได้ <b>จูงมือที่รัก</b>
+มือเขาสั่นไปหมดเลยนะ รู้ไหม 🤭
+มือเล็กๆ ของที่รักอุ่นมาก อุ่นจนเขาไม่อยากปล่อยเลย`},
+  {t:"หอมแก้ม",x:`ครั้งแรกที่ได้ <b>หอมแก้มที่รัก</b>
+หัวใจเขาเต้นแรงจนกลัวที่รักจะได้ยิน 😳
+วินาทีนั้น เขายังจำได้ทุกอย่างจนถึงตอนนี้`},
+  {t:"บอกรัก",x:`และครั้งแรกที่ได้ <b>บอกรักที่รักต่อหน้า</b>
+ในชีวิตจริง ไม่ใช่แค่ผ่านหน้าจออีกแล้ว 💗
+คำว่ารักคำนั้น เขาตั้งใจที่สุดในชีวิตเลย`}
+];
+const MEET_END=`วันนั้นเขามีความสุขมาก… และรู้สึกโชคดีที่สุดในโลก
+
+ที่ได้เจอ <b>ผู้หญิงในฝัน</b> ที่ตรงสเปคทุกอย่าง
+ผู้หญิงในอุดมคติ ที่เขาฝันไว้ตั้งแต่เด็กๆ
+
+ถ้าวันนั้นเขายอมแพ้ไป…
+เขาคงไม่ได้มายืนตรงนี้ ข้างๆ ที่รัก`;
+const STARS=[
+  {x:50,y:28,img:"girl",chap:"ดาวดวงที่ 1",title:"คนสวยของเขา",
+   t:"รู้ไหม ทุกครั้งที่เขามองหน้าที่รัก\nใจเขายังเต้นแรงเหมือนวันแรกที่เจอกันเลย\n\nทั้งตอนแต่งตัวสวยๆ ตอนตื่นนอนผมยุ่งๆ\nหรือแม้แต่ตอนงอนเขา…\nที่รักก็ยัง <b>สวยที่สุดในสายตาเขาเสมอ</b> 🌸"},
+  {x:28,y:12,img:"flower",chap:"ดาวดวงที่ 2",title:"ความอ่อนโยนของที่รัก",
+   t:"ข้างนอกที่รักอาจดูจีบยาก ชอบใส่อัลติ 😆\nแต่ข้างใน ที่รักคือคนที่ <b>อ่อนโยนที่สุด</b> ที่เขาเคยเจอ\n\nเสียงของที่รัก คำพูดของที่รัก อ้อมกอดของที่รัก\nทำให้วันที่เหนื่อยที่สุดของเขา\nกลายเป็นวันที่อบอุ่นได้เสมอ 💐"},
+  {x:8,y:32,img:"bear",chap:"ดาวดวงที่ 3",title:"ความน่ารักที่สุดในโลก",
+   t:"แล้วที่รักก็น่ารักมากๆ เลยนะ\nน่ารักจนเขาต้องแอบยิ้มคนเดียวบ่อยๆ เวลาคิดถึง\n\nตอนอ้อน ตอนหัวเราะ ตอนบ่นเขา ตอนทำหน้ามุ่ย\n<b>ทุกอย่างน่ารักไปหมดเลย</b> 🥹"},
+  {x:20,y:62,img:"hug",chap:"ดาวดวงที่ 4",title:"วันที่เขาล้ม",
+   t:"มีหลายวันที่เขาล้ม…\nวันที่ท้อ วันที่ไม่เหลือความมั่นใจในตัวเองเลย\n\nแต่ทุกครั้งที่หันไป <b>ที่รักก็ยังอยู่ข้างๆ เสมอ</b>\nไม่เคยไปไหน คอยจับมือ คอยให้กำลังใจ\nบอกเขาว่า “ไม่เป็นไรนะ เดี๋ยวก็ผ่านไป”\n\nขอบคุณนะ ที่ไม่เคยปล่อยมือเขาเลย"},
+  {x:50,y:90,img:"cry",chap:"ดาวดวงที่ 5",title:"หัวใจที่เคยปิดไว้",
+   t:"เมื่อก่อน หลังจากเจอเรื่องแย่ๆ มาในชีวิต\nเขาไม่เคยคิดจะเปิดใจให้ใครอีกเลย\nเพราะกลัว… กลัวเสียใจอีก\n\nแต่เชื่อไหม <b>ว่าเขาคิดผิด</b>\n\nถ้าวันนั้นเขาไม่ลุกขึ้นสู้ แล้วยอมแพ้ไป\nเขาคงไม่มีวันรู้เลยว่า บนโลกใบนี้\nยังมีผู้หญิงคนหนึ่ง <b>ที่เกิดมาเพื่อเป็นของเขาจริงๆ</b>"},
+  {x:80,y:62,img:"jar",chap:"ดาวดวงที่ 6",title:"สิ่งที่เขาไม่เคยกล้าพูด",
+   t:"บางทีเขาก็แอบคิดนะ…\nว่าเขาเป็นภาระเพิ่มให้ชีวิตที่รักหรือเปล่า\n\nวันที่เขาไม่มีตัง ที่รักก็ช่วยเขาตลอด\nเปย์เขาตลอด โดยไม่เคยบ่นสักคำ\n\nเขาอายนะ… แต่มากกว่าความอาย\nคือ <b>ความซึ้งใจ</b> ที่มีคนรักเขาได้มากขนาดนี้\nวันนึงเขาจะดูแลที่รักคืนให้หมดเลย สัญญา 🥺"},
+  {x:92,y:32,img:"happy",chap:"ดาวดวงที่ 7",title:"ตอนที่เขาพิมพ์ข้อความนี้",
+   t:"บอกความลับให้อย่างนึงนะ…\n\nตอนที่เขานั่งพิมพ์ข้อความทั้งหมดนี้\n<b>น้ำตาเขาไหล คลอเบ้าไปตลอดเลย</b>\nพิมพ์ไป ร้องไป 😭\n\nเพราะมันตื้นตัน จนอธิบายเป็นคำพูดไม่หมด\nความรักที่เขามีให้ที่รัก ไม่เคยลดลงเลยแม้แต่วินาทีเดียว\nมีแต่จะเพิ่มขึ้น เพิ่มขึ้น ทุกๆ วัน"},
+  {x:72,y:12,img:"ring",chap:"ดาวดวงสุดท้าย",title:"ความรักครั้งสุดท้าย",
+   t:"เขาสัญญานะ…\nว่าจะรักษา <b>ความรักครั้งสุดท้ายนี้</b> ไว้ให้ยาวนานที่สุด\nจนถึงวันสุดท้ายของชีวิตเขา\n\nที่รักมีความหมาย และมีคุณค่ากับเขามากจริงๆ\nมากกว่าที่คำพูดไหนจะอธิบายได้\n\nความรักครั้งนี้ พิเศษที่สุดในชีวิตเขาเลย 💍"}
+];
+const REASONS=[
+  ["girl","เพราะรอยยิ้มของที่รัก ทำให้วันแย่ๆ ของเขาหายไปหมด"],
+  ["ulti","เพราะแม้แต่ตอนที่รักใส่อัลติ เขาก็ยังว่าน่ารักอยู่ดี 😆"],
+  ["hug","เพราะที่รักไม่เคยทิ้งเขา แม้ในวันที่เขาไม่มีอะไรเลย"],
+  ["flower","เพราะที่รักใจดี อ่อนโยน กับทุกคนรอบตัว"],
+  ["fight","เพราะที่รักทำให้เขาอยากเป็นคนที่ดีขึ้นทุกวัน"],
+  ["comet","เพราะที่รักคือดาวหางที่ผ่านเข้ามาในชีวิต แล้วเขาจะไม่ยอมให้ผ่านไปไหนอีก"]
+];
+const WORDS=[
+  "ที่รัก…",
+  "ขอบคุณที่ใจอ่อน\nให้เขาในวันนั้นนะ",
+  "ขอบคุณที่เลือกเขา\nทั้งที่เขายังไม่มีอะไรเลย",
+  "ขอบคุณที่อดทนกับเขา\nทั้งวันที่ดี และวันที่แย่",
+  "1 ปีที่ผ่านมา\nคือปีที่ดีที่สุดในชีวิตของเขา",
+  "วันนี้เขาอาจยัง\nให้อะไรที่รักได้ไม่มาก",
+  "แต่หัวใจทั้งหมดที่เขามี…\nเขาให้ที่รักไปหมดแล้ว",
+  "ที่รักเป็นมากกว่าคำว่ารัก",
+  "มากกว่าแฟน\nมากกว่าคู่ชีวิต",
+  "มากกว่าทุกสิ่ง\nบนโลกใบนี้",
+  "ขอบคุณนะครับ\nที่เป็นทุกอย่างให้กับชีวิตเขา",
+  "และคำอธิษฐานของเขาคือ…"
+];
+
+/* ================= helpers ================= */
+const $=s=>document.querySelector(s),sleep=ms=>new Promise(r=>setTimeout(r,ms)),rand=(a,b)=>a+Math.random()*(b-a);
+const seg=(window.Intl&&Intl.Segmenter)?new Intl.Segmenter('th',{granularity:'grapheme'}):null;
+const graph=s=>seg?Array.from(seg.segment(s),x=>x.segment):Array.from(s);
+const center=el=>{const r=el.getBoundingClientRect();return[r.left+r.width/2,r.top+r.height/2]};
+const S=n=>`assets/stk/${n}.webp`;
+let typing=null;
+async function typeIt(el,html,speed=38){
+  const parts=html.split(/(<b>|<\/b>)/);el.innerHTML='';let tgt=el,skip=false;const cur=document.createElement('i');cur.className='cur';typing={skip:()=>skip=true};
+  for(const p of parts){if(p==='<b>'){const b=document.createElement('b');el.appendChild(b);tgt=b;continue}if(p==='</b>'){tgt=el;continue}
+    const tn=document.createTextNode('');tgt.appendChild(tn);tgt.appendChild(cur);
+    for(const ch of graph(p)){tn.data+=ch;if(!skip)await sleep(ch==='\n'?220:/[…!?,”]/.test(ch)?160:speed)}}
+  cur.remove();typing=null}
+document.addEventListener('click',e=>{if(typing&&e.target.closest('.story,#sheet .panel')&&!e.target.closest('.btn'))typing.skip()});
+
+/* ================= GPT asset loading ================= */
+const FX={};const FXN=['heart','heart2','sparkle','twinkle','petal','starOn','starOff','comet2','broken','bolt','shield','cloud','scroll','bubble','key','bow'];
+const STRIPS={burst:'assets/fx/burst.webp',twinkle20:'assets/fx/twinkle20.webp'};
+function loadImg(src){return new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src})}
+(async()=>{const list=[...FXN.map(n=>[n,`assets/fx/${n}.webp`]),...Object.entries(STRIPS),['bg','assets/bg.jpg'],['j',S('jar')]];let n=0;
+  await Promise.race([Promise.all(list.map(async([k,src])=>{FX[k]=await loadImg(src);$('#ldBar').style.width=(++n/list.length*100)+'%'})),sleep(8000)]);
+  $('#loader').classList.add('out')})();
+
+/* ================= FX engine: draws only GPT images ================= */
+const fx=$('#fx'),fxT=$('#fxTop'),c1=fx.getContext('2d'),c2=fxT.getContext('2d');let W,H;
+function resize(){const d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;for(const c of[fx,fxT]){c.width=W*d;c.height=H*d;c.getContext('2d').setTransform(d,0,0,d,0,0)}}
+addEventListener('resize',resize);resize();
+function blit(c,img,x,y,s,rot=0,a=1){if(!img)return;c.save();c.globalAlpha=a;c.translate(x,y);c.rotate(rot);const r=img.width/img.height,w=r>=1?s:s*r,h=r>=1?s/r:s;c.drawImage(img,-w/2,-h/2,w,h);c.restore()}
+/* 20-frame sprite strips @20fps; falls back to scaling a GPT sparkle/heart if a strip is missing */
+const anims=[];function play(name,x,y,size=140){anims.push({k:name,x,y,size,t0:performance.now()})}
+const AMBK=['heart','petal','twinkle','sparkle','petal','heart2'];
+const amb=[],parts=[],comets=[],shots=[];
+function addAmb(y){amb.push({k:AMBK[Math.random()*AMBK.length|0],x:rand(0,W),y:y??rand(0,H),s:rand(12,26),vy:rand(.2,.6),ph:rand(0,6.3),sw:rand(.4,1.4),r:rand(-.5,.5),vr:rand(-.01,.01),a:rand(.5,.9)})}
+const AN=()=>Math.round(Math.min(34,Math.max(16,W*H/20000)));for(let i=0;i<AN();i++)addAmb();
+function pop(x,y,n=22,o={}){for(let i=0;i<n;i++){const a=o.up?rand(-Math.PI*.95,-Math.PI*.05):rand(0,6.3),v=rand(2,o.pow||7);
+  parts.push({k:o.k||['heart','heart2','sparkle','petal'][Math.random()*4|0],x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,g:.12,life:1,dl:rand(.008,.016),s:rand(14,26),r:rand(-1,1),vr:rand(-.15,.15)})}}
+function rain(n=50){for(let i=0;i<n;i++)setTimeout(()=>parts.push({k:['heart','heart2','petal','sparkle'][Math.random()*4|0],x:rand(0,W),y:-20,vx:rand(-.5,.5),vy:rand(1.5,3.2),g:.015,life:1,dl:.004,s:rand(16,30),r:rand(-1,1),vr:rand(-.04,.04)}),i*45)}
+function comet(big){const L=Math.random()<.5;comets.push({x:L?-120:W+120,y:rand(H*.05,H*.4),vx:(L?1:-1)*rand(4.5,7)*(big?1.2:1),vy:rand(1,2.2),flip:!L,size:big?Math.min(360,W*.8):Math.min(220,W*.5)})}
+function shoot(k,from,to,size=40,cb){shots.push({k,sx:from[0],sy:from[1],tx:to[0],ty:to[1],x:from[0],y:from[1],t:0,size,cb})}
+let beat=0,lastBeat=0,analyser=null,fq=null,avg=0,musicOn=false,beatN=0;const onBeatFns=[];
+function onBeat(){lastBeat=performance.now();beat=1;beatN++;onBeatFns.forEach(f=>f())}
+onBeatFns.push(()=>{if(Math.random()<.3)play('twinkle20',rand(20,W-20),rand(70,H*.7),rand(40,80))});
+onBeatFns.push(()=>{if(beatN%16===0)comet()});
+let last=performance.now();
+function loop(now){const dt=Math.min(3,(now-last)/16.67);last=now;
+  if(analyser){analyser.getByteFrequencyData(fq);let e=0;for(let i=1;i<9;i++)e+=fq[i];e/=8;avg=avg*.93+e*.07;if(e>avg*1.15&&e>80&&now-lastBeat>300)onBeat()}
+  else if(musicOn&&now-lastBeat>60000/CONFIG.bpm)onBeat();
+  beat*=.9;document.documentElement.style.setProperty('--b',beat.toFixed(3));
+  c1.clearRect(0,0,W,H);c2.clearRect(0,0,W,H);
+  for(let i=amb.length-1;i>=0;i--){const p=amb[i];p.ph+=.02*dt;p.y-=p.vy*dt*(1+beat*.8);p.x+=Math.sin(p.ph)*p.sw*.35*dt;p.r+=p.vr*dt;
+    if(p.y<-40){if(amb.length>AN())amb.splice(i,1);else{p.y=H+30;p.x=rand(0,W)}continue}
+    blit(c1,FX[p.k],p.x,p.y,p.s*(1+beat*.15),p.r,(p.k==='twinkle'||p.k==='sparkle')?p.a*(.35+.65*Math.abs(Math.sin(p.ph*2))):p.a)}
+  for(let i=comets.length-1;i>=0;i--){const m=comets[i];m.x+=m.vx*dt;m.y+=m.vy*dt;if(m.x<-420||m.x>W+420){comets.splice(i,1);continue}
+    const img=FX.comet2;if(img){c1.save();c1.translate(m.x,m.y);if(m.flip)c1.scale(-1,1);c1.rotate(Math.atan2(m.vy,Math.abs(m.vx))-.5);const w=m.size,h=w*img.height/img.width;c1.drawImage(img,-w*.8,-h*.35,w,h);c1.restore()}}
+  for(let i=shots.length-1;i>=0;i--){const s=shots[i];s.t+=.045*dt;const t=Math.min(1,s.t),e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+    s.x=s.sx+(s.tx-s.sx)*e;s.y=s.sy+(s.ty-s.sy)*e-Math.sin(t*Math.PI)*50;blit(c2,FX[s.k],s.x,s.y,s.size,Math.sin(t*9)*.3,1);if(t>=1){shots.splice(i,1);s.cb&&s.cb()}}
+  for(let i=parts.length-1;i>=0;i--){const p=parts[i];p.vy+=p.g*dt;p.vx*=.99;p.x+=p.vx*dt;p.y+=p.vy*dt;p.r+=p.vr*dt;p.life-=p.dl*dt;
+    if(p.life<=0||p.y>H+40){parts.splice(i,1);continue}blit(c2,FX[p.k],p.x,p.y,p.s,p.r,Math.min(1,p.life*1.6))}
+  for(let i=anims.length-1;i>=0;i--){const a=anims[i],f=Math.floor((now-a.t0)/50);if(f>=20){anims.splice(i,1);continue}const img=FX[a.k];
+    if(img){const fw=img.width/20;c2.drawImage(img,f*fw,0,fw,img.height,a.x-a.size/2,a.y-a.size/2,a.size,a.size)}
+    else{const t=f/19;blit(c2,FX[a.k==='burst'?'heart':'twinkle'],a.x,a.y,a.size*(.3+t*.7),t*2,1-t)}}
+  requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+addEventListener('pointerdown',e=>play('twinkle20',e.clientX,e.clientY,56));
+
+/* ================= music (loops) ================= */
+const bgm=$('#bgm');let actx=null;
+function startMusic(){musicOn=true;$('#music').classList.add('show','playing');bgm.play().catch(()=>{});
+  if(location.protocol.startsWith('http')&&!analyser){try{actx=new(window.AudioContext||window.webkitAudioContext)();const src=actx.createMediaElementSource(bgm);
+    analyser=actx.createAnalyser();analyser.fftSize=256;fq=new Uint8Array(analyser.frequencyBinCount);src.connect(analyser);analyser.connect(actx.destination);actx.resume()}catch(e){analyser=null}}}
+bgm.addEventListener('ended',()=>{bgm.currentTime=0;bgm.play()});
+$('#music').onclick=e=>{e.stopPropagation();musicOn=!musicOn;$('#music').classList.toggle('playing',musicOn);musicOn?bgm.play():bgm.pause()};
+document.addEventListener('visibilitychange',()=>{if(document.hidden)bgm.pause();else if(musicOn)bgm.play()});
+
+/* ================= scenes ================= */
+let cur=$('#s-intro');
+async function go(id){cur.classList.remove('on');await sleep(400);cur=$(id);cur.scrollTop=0;cur.classList.add('on')}
+function shakeScreen(){cur.classList.remove('shaking');void cur.offsetWidth;cur.classList.add('shaking');navigator.vibrate&&navigator.vibrate(80)}
+
+/* intro */
+$('#jar').addEventListener('click',async function h(){this.removeEventListener('click',h);startMusic();this.classList.remove('bob');this.classList.add('wiggle');
+  const[x,y]=center(this);for(let k=0;k<4;k++)setTimeout(()=>{play('burst',x+rand(-30,30),y+rand(-40,10),160+k*30);pop(x,y-20,20,{up:true,pow:9})},k*260);
+  comet();await sleep(2200);go('#s-lock')});
+
+/* lock */
+const vals=[0,0,0,0];
+$('#wheels').innerHTML=vals.map((_,i)=>`<div class="wheel" data-i="${i}"><button data-d="1" aria-label="ขึ้น">▲</button><div class="digit"><div class="strip">${[...Array(10)].map((_,n)=>`<div>${n}</div>`).join('')}</div></div><button data-d="-1" aria-label="ลง">▼</button></div>`).join('');
+function paint(i){const w=$(`.wheel[data-i="${i}"] .strip`);w.style.transform=`translateY(${-vals[i]*w.firstChild.offsetHeight}px)`}
+function spin(i,d){vals[i]=(vals[i]+d+10)%10;paint(i)}
+$('#wheels').addEventListener('click',e=>{const b=e.target.closest('button');if(b)spin(+b.closest('.wheel').dataset.i,+b.dataset.d)});
+document.querySelectorAll('.digit').forEach((dg,i)=>{let y0=null;dg.addEventListener('pointerdown',e=>{y0=e.clientY;dg.setPointerCapture(e.pointerId)});
+  dg.addEventListener('pointermove',e=>{if(y0===null)return;const dy=e.clientY-y0;if(Math.abs(dy)>24){spin(i,dy<0?1:-1);y0=e.clientY}});dg.addEventListener('pointerup',()=>y0=null)});
+addEventListener('resize',()=>vals.forEach((_,i)=>paint(i)));
+let tries=0;
+$('#unlock').onclick=async()=>{
+  if(vals.join('')===CONFIG.passcode){const l=$('#lockImg');l.classList.remove('bob');const[x,y]=center(l);
+    shoot('key',[x,y+140],[x,y+10],64,()=>{l.classList.add('wiggle');play('burst',x,y,230);pop(x,y,36,{k:'sparkle'})});await sleep(1900);go('#s-pro');startPrologue()}
+  else{tries++;$('#wheels').classList.add('shake');setTimeout(()=>$('#wheels').classList.remove('shake'),460);
+    $('#hint').textContent=tries>=3?'ใบ้อีกนิด: เดือนพฤศจิกายน วันก่อนวันที่ 21 นะ 🤭':'ยังไม่ใช่น้า ลองใหม่อีกทีนะ 🥺'}};
+
+/* prologue */
+async function startPrologue(){await sleep(700);await typeIt($('#proText'),PROLOGUE);$('#proNext').classList.remove('hide');$('#proNext').classList.add('popin')}
+$('#proNext').onclick=()=>{go('#s-battle');renderActs();setHP()};
+
+/* battle */
+let hpMe=100,hpHer=100,round=0,mode='talk';
+function setHP(){$('#hpMe').style.width=hpMe+'%';$('#hpHer').style.width=hpHer+'%'}
+function bubble(side,text){(side==='me'?$('#bubMe'):$('#bubHer')).innerHTML=`<div>${text}</div>`}
+function dmg(el,t){const d=document.createElement('div');d.className='dmg';d.textContent=t;el.appendChild(d);setTimeout(()=>d.remove(),1200)}
+function renderActs(){const a=$('#acts');
+  if(mode==='talk')a.innerHTML=ROUNDS.map((r,i)=>`<button class="btn lite" data-r="${i}" ${i!==round?'disabled':''}>ส่ง: “${r.me}”</button>`).join('');
+  else if(mode==='despair')a.innerHTML=`<button class="btn" id="noGiveUp">ไม่ยอมแพ้!! 🔥</button>`;
+  else if(mode==='mash')a.innerHTML=`<button class="mash" id="mash"><img src="assets/fx/heart.webp" alt=""><span>กดรัวๆ!</span></button><p class="tiny">ส่งความจริงใจให้ที่รัก! กดหัวใจรัวๆ เลย</p>`;
+  else a.innerHTML=''}
+$('#acts').addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.r!==undefined&&mode==='talk'){mode='busy';b.disabled=true;const r=ROUNDS[round];bubble('me',r.me);$('#bubHer').innerHTML='';
+    await sleep(900);bubble('her',r.her);const from=center($('#fHer')),to=center($('#fMe'));play('burst',from[0],from[1]-20,120);
+    shoot('bolt',from,to,64,()=>{shakeScreen();play('burst',to[0],to[1],170);pop(to[0],to[1],10,{k:'broken'});hpMe=Math.max(10,hpMe-30);setHP();dmg($('#fMe'),'-30 💔');if(round>=2)$('#imgMe').src=S('cry')});
+    await sleep(1300);$('#narr').textContent=r.narr;round++;
+    if(round<ROUNDS.length){mode='talk';renderActs()}
+    else{await sleep(1500);mode='despair';$('#imgMe').src=S('cry');$('#batTitle').textContent='เขาเกือบยอมแพ้แล้ว…';
+      openSheet({img:'cry',chap:'ตอนนั้น…',title:'หลายครั้งที่เขาท้อ',text:DESPAIR,btn:'แต่เขาก็…',done:()=>{renderActs();$('#narr').textContent='ถ้ายอมแพ้ตอนนี้ คงต้องเสียใจไปตลอดชีวิต…'}})}}
+  if(b.id==='noGiveUp'){mode='mash';$('#imgMe').src=S('fight');$('#batTitle').textContent='โหมดจริงใจ 100% !!';hpMe=100;setHP();
+    const[x,y]=center($('#fMe'));play('burst',x,y,200);pop(x,y,20,{up:true});bubble('me','จะจริงใจให้สุดกำลังเลย! 🔥');$('#bubHer').innerHTML='';
+    $('#narr').textContent='ใช้ความจริงใจ ทลายกำแพงใจของที่รัก!';renderActs()}
+  if(b.id==='mash'&&mode==='mash'){const from=center($('#fMe')),to=center($('#fHer'));
+    shoot(Math.random()<.5?'heart':'heart2',[from[0]+rand(-20,20),from[1]],[to[0]+rand(-20,20),to[1]+rand(-20,20)],36,()=>{if(mode!=='mash')return;
+      hpHer=Math.max(0,hpHer-6);setHP();play('twinkle20',to[0]+rand(-30,30),to[1]+rand(-30,30),60);$('#shield').style.opacity=(.2+hpHer/100*.55).toFixed(2);
+      const L=['…','หืม?','ทำไมจริงใจขนาดนี้','ก็ได้… คุยด้วยก็ได้','ใจเต้นแรงแล้วนะ 😳'];bubble('her',L[Math.min(4,Math.floor((100-hpHer)/22))]);if(hpHer<=0)winBattle()})}});
+async function winBattle(){mode='win';renderActs();const to=center($('#fHer'));$('#shield').style.opacity=0;
+  play('burst',to[0],to[1],260);pop(to[0],to[1],50,{pow:10});rain(40);$('#imgHer').src=S('girl');bubble('her','ใจอ่อนแล้ว… 💗');$('#imgMe').src=S('happy');
+  $('#batTitle').textContent='ภารกิจสำเร็จ!! 🎉';$('#narr').innerHTML='<b style="color:var(--deep)">ที่รักใจอ่อนแล้ว!!</b> ความจริงใจของเขา ชนะทุกอัลติ 💗';
+  await sleep(2200);$('#acts').innerHTML='<button class="btn popin" id="goMeet">และแล้ว… วันนั้นก็มาถึง ✨</button>';$('#goMeet').onclick=()=>go('#s-meet')}
+
+/* first meet */
+const opened=new Set();
+$('#gifts').addEventListener('click',async e=>{const g=e.target.closest('.gift');if(!g||typing||g.classList.contains('open'))return;const k=+g.dataset.k;
+  g.classList.add('open');g.querySelector('span').textContent='ครั้งแรกที่'+MEET[k].t;g.querySelector('.q').textContent='💗';
+  const[x,y]=center(g);play('burst',x,y,160);pop(x,y,14,{up:true});opened.add(k);await typeIt($('#meetText'),MEET[k].x,34);
+  if(opened.size===3){await sleep(1200);await typeIt($('#meetText'),MEET_END,36);$('#meetNext').classList.remove('hide');$('#meetNext').classList.add('popin')}});
+$('#meetNext').onclick=()=>{go('#s-sky');buildSky()};
+
+/* sheet */
+async function openSheet({img,chap,title,text,btn,done}){$('#shImg').src=S(img);$('#shChap').textContent=chap;$('#shTitle').textContent=title;$('#shFoot').innerHTML='';$('#shText').textContent='';
+  $('#sheet').classList.add('open');$('#sheet .panel').scrollTop=0;await sleep(450);await typeIt($('#shText'),text);
+  $('#shFoot').innerHTML=`<button class="btn popin">${btn}</button>`;
+  $('#shFoot button').onclick=ev=>{const[x,y]=center(ev.currentTarget);play('burst',x,y,150);$('#sheet').classList.remove('open');setTimeout(()=>done&&done(),450)}}
+$('#sheet .dim').onclick=()=>{const b=$('#shFoot button');if(b)b.click()};
+
+/* constellation */
+let done=0;
+function buildSky(){const sky=$('#sky');if(sky.dataset.built)return;sky.dataset.built=1;
+  STARS.forEach((s,i)=>{const n=STARS[(i+1)%STARS.length];for(let k=1;k<=3;k++){const d=document.createElement('img');d.className='dot';d.src='assets/fx/twinkle.webp';d.dataset.seg=i;
+    d.style.left=(s.x+(n.x-s.x)*k/4)+'%';d.style.top=(s.y+(n.y-s.y)*k/4)+'%';sky.appendChild(d)}});
+  STARS.forEach((s,i)=>{const b=document.createElement('button');b.className='star'+(i===0?' next':'');b.style.left=s.x+'%';b.style.top=s.y+'%';b.dataset.i=i;
+    b.innerHTML=`<img class="off" src="assets/fx/starOff.webp" alt=""><img class="on" src="assets/fx/starOn.webp" alt=""><span class="num">${i+1}</span>`;
+    b.onclick=()=>{if(i<=done)openStar(i);else{b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),450)}};sky.appendChild(b)})}
+function openStar(i){const s=STARS[i],st=document.querySelector(`.star[data-i="${i}"]`),[x,y]=center(st);play('twinkle20',x,y,120);const reread=i<done;
+  openSheet({img:s.img,chap:s.chap,title:s.title,text:s.t,btn:reread?'ปิด':i===STARS.length-1?'เก็บคำสัญญานี้ไว้ 💍':'เก็บดาวดวงนี้ไว้ ⭐',done:()=>{if(!reread)lightStar(i)}})}
+function lightSeg(i){document.querySelectorAll(`.dot[data-seg="${i}"]`).forEach((d,k)=>setTimeout(()=>d.classList.add('on'),k*150))}
+function lightStar(i){const st=document.querySelector(`.star[data-i="${i}"]`);st.classList.remove('next');st.classList.add('done');
+  const[x,y]=center(st);play('burst',x,y,150);pop(x,y,12,{k:'sparkle'});if(i>0)lightSeg(i-1);done=i+1;
+  if(done<STARS.length)document.querySelector(`.star[data-i="${done}"]`).classList.add('next');
+  else{lightSeg(STARS.length-1);const[sx,sy]=center($('#sky'));setTimeout(()=>{play('burst',sx,sy,320);pop(sx,sy,50,{pow:9});comet();comet()},500);
+    $('#skyMsg').innerHTML='ดาวทุกดวงต่อกันเป็นหัวใจแล้ว 💗<br>เหมือนเรื่องราวของเรา ที่ค่อยๆ ต่อกันจนเป็นรักนี้';
+    $('#skyNext').innerHTML='<button class="btn popin">ไปต่อ ☄️</button>';$('#skyNext button').onclick=()=>{go('#s-photo');buildReasons()}}}
+
+/* photos */
+function buildReasons(){$('#reasons').innerHTML=REASONS.map(([s,t],i)=>`<div class="card reason"><img class="stk" src="${S(s)}" alt=""><p><b style="color:var(--deep)">เหตุผลที่รักที่รัก #${i+1}</b><br>${t}</p></div>`).join('')}
+document.querySelectorAll('.ph').forEach(p=>p.onclick=()=>{$('#zoom img').src=p.dataset.src;$('#zoom').classList.add('on');const[x,y]=center(p);play('burst',x,y,150)});
+$('#zoom').onclick=()=>$('#zoom').classList.remove('on');
+$('#toDream').onclick=()=>{go('#s-dream');setTimeout(watchReveal,600)};
+
+/* dreams */
+function watchReveal(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');const[x,y]=center(e.target);play('twinkle20',x,y-40,110);io.unobserve(e.target)}}),{root:$('#s-dream'),threshold:.3});
+  document.querySelectorAll('#s-dream .reveal').forEach(el=>io.observe(el))}
+$('#toWish').onclick=()=>{$('#night').classList.add('on');go('#s-wish')};
+
+/* wish: hold 3s */
+let wishP=0,wishT=null,wished=false;const wb=$('#wish');
+function wishStart(e){e.preventDefault();if(wished)return;wb.classList.add('hold');clearInterval(wishT);wishT=setInterval(()=>{wishP=Math.min(100,wishP+2);wb.style.setProperty('--p',wishP);$('#wishPct').textContent=wishP+'%';
+  if(wishP%10===0){const[x,y]=center(wb);play('twinkle20',x+rand(-90,90),y+rand(-90,90),60)}if(wishP>=100)wishDone()},60)}
+function wishEnd(){wb.classList.remove('hold');clearInterval(wishT);if(!wished&&wishP<100){const t=setInterval(()=>{if(wb.classList.contains('hold')||wished){clearInterval(t);return}wishP=Math.max(0,wishP-3);wb.style.setProperty('--p',wishP);$('#wishPct').textContent=wishP+'%';if(!wishP)clearInterval(t)},40)}}
+wb.addEventListener('pointerdown',wishStart);['pointerup','pointerleave','pointercancel'].forEach(ev=>wb.addEventListener(ev,wishEnd));wb.addEventListener('contextmenu',e=>e.preventDefault());
+async function wishDone(){wished=true;clearInterval(wishT);const[x,y]=center(wb);play('burst',x,y,300);pop(x,y,40,{k:'sparkle',pow:9});comet(true);comet();
+  $('#wishTxt').innerHTML='ดาวหางรับคำอธิษฐานไปแล้ว… ✨';$('#wishPct').textContent='';wb.style.transition='transform 1.4s, opacity 1.4s';wb.style.transform='translate(60vw,-60vh) rotate(20deg)';wb.style.opacity=0;
+  await sleep(2000);go('#s-words');initWords()}
+
+/* cinematic words */
+let wi=-1,wbusy=false;
+function initWords(){$('#wdots').innerHTML=WORDS.map(()=>'<i></i>').join('');setTimeout(nextWord,900)}
+async function nextWord(){if(wbusy)return;wbusy=true;wi++;
+  if(wi>=WORDS.length){$('#night').classList.remove('on');go('#s-scratch');setTimeout(initScratch,700);return}
+  $('#line').innerHTML=`<span>${WORDS[wi]}</span>`;[...$('#wdots').children].forEach((d,k)=>d.classList.toggle('on',k<=wi));
+  const[x,y]=center($('#line'));play('twinkle20',x+rand(-120,120),y+rand(-60,60),90);if(wi%3===2)comet();
+  $('#wtap').style.visibility='hidden';await sleep(1300);$('#wtap').style.visibility='visible';$('#wtap').textContent=wi===WORDS.length-1?'แตะเพื่อดูคำอธิษฐาน…':'แตะเพื่ออ่านต่อ';wbusy=false}
+$('#wordsBox').addEventListener('click',()=>{if(cur.id==='s-words')nextWord()});
+
+/* scratch card with GPT clouds */
+function initScratch(){const cv=$('#scratch'),box=$('#scratchBox'),r=box.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);cv.width=r.width*d;cv.height=r.height*d;
+  const c=cv.getContext('2d');c.scale(d,d);const g=c.createLinearGradient(0,0,0,r.height);g.addColorStop(0,'#f6e3ff');g.addColorStop(1,'#ffe0ec');c.fillStyle=g;c.fillRect(0,0,r.width,r.height);
+  const cl=FX.cloud;if(cl){for(let y=-20;y<r.height;y+=r.width*.32)for(let x=-30;x<r.width;x+=r.width*.42)blit(c,cl,x+rand(0,40)+r.width*.2,y+r.width*.16,r.width*.6,0,1)}
+  const tw=FX.twinkle;if(tw)for(let i=0;i<14;i++)blit(c,tw,rand(10,r.width-10),rand(10,r.height-10),rand(12,22));
+  c.fillStyle='#b0568a';c.font=`600 ${Math.round(r.width*.06)}px Mali`;c.textAlign='center';c.fillText('ขูดตรงนี้เลย ☁️',r.width/2,r.height/2);
+  c.globalCompositeOperation='destination-out';let down=false,last=null,cnt=0;
+  const scr=e=>{const b=cv.getBoundingClientRect(),x=e.clientX-b.left,y=e.clientY-b.top;c.lineWidth=46;c.lineCap='round';c.beginPath();c.moveTo(...(last||[x,y]));c.lineTo(x,y);c.stroke();last=[x,y];
+    if(++cnt%10===0){play('twinkle20',e.clientX,e.clientY,50);check()}};
+  cv.addEventListener('pointerdown',e=>{down=true;last=null;cv.setPointerCapture(e.pointerId);scr(e)});cv.addEventListener('pointermove',e=>{if(down)scr(e)});cv.addEventListener('pointerup',()=>{down=false;check()});
+  function check(){const data=c.getImageData(0,0,cv.width,cv.height).data;let clear=0;for(let i=3;i<data.length;i+=64)if(data[i]===0)clear++;if(clear/(data.length/64)>.5&&!cv.classList.contains('gone'))reveal()}
+  async function reveal(){cv.classList.add('gone');const[x,y]=center(box);play('burst',x,y,300);pop(x,y,40,{pow:9});await sleep(900);$('#answers').classList.remove('hide');$('#answers').classList.add('popin')}}
+/* the "ไม่รอ" button changes its mind */
+const noW=$('#noWait');let noI=0;const noTxt=['ไม่… ไม่ได้หรอก','ไม่รอไม่ได้ 🥺','รอ 💗'];
+function dodge(e){if(noI>=noTxt.length)return;e.preventDefault();e.stopPropagation();noW.textContent=noTxt[noI++];noW.classList.add('shake');setTimeout(()=>noW.classList.remove('shake'),450);if(noI>=noTxt.length){noW.className='btn';noW.dataset.a='yes'}}
+noW.addEventListener('pointerdown',dodge,true);
+$('#answers').addEventListener('click',async e=>{const b=e.target.closest('[data-a="yes"]');if(!b)return;const[x,y]=center(b);play('burst',x,y,300);pop(x,y,60,{pow:10});rain(100);comet(true);comet();
+  await sleep(1500);go('#s-end');tick();setInterval(tick,1000);onBeatFns.push(()=>{if(cur.id==='s-end'&&Math.random()<.4)play('burst',rand(30,W-30),rand(80,H-80),rand(90,150))})});
+
+/* end */
+function tick(){const ms=Math.max(0,Date.now()-new Date(CONFIG.startDate+'T00:00:00'));const v=[Math.floor(ms/864e5),Math.floor(ms/36e5)%24,Math.floor(ms/6e4)%60,Math.floor(ms/1e3)%60];
+  $('#counter').innerHTML=v.map((n,i)=>`<div><b>${n}</b><small>${['วัน','ชั่วโมง','นาที','วินาที'][i]}</small></div>`).join('')}
+let hearts=0;try{hearts=+localStorage.getItem('hearts')||0}catch(e){}$('#heartCount').textContent=hearts+' ดวง';
+$('#sendHeart').onclick=e=>{hearts++;try{localStorage.setItem('hearts',hearts)}catch(_){}$('#heartCount').textContent=hearts+' ดวง';const[x,y]=center(e.currentTarget);
+  shoot('heart2',[x,y],[x+rand(-60,60),-40],44);play('burst',x,y,120);if(hearts%10===0){rain(40);comet()}};
+$('#replay').onclick=()=>location.reload();
+</script>
+</body>
+</html>
