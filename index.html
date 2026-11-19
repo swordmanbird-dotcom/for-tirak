@@ -399,7 +399,7 @@ img{-webkit-user-drag:none;user-select:none}
   </div>
   <button class="btn" id="qNext">ข้อต่อไป ›</button>
   <button class="btn hide" id="sendAns">ส่งคำตอบให้เขา 💌</button>
-  <p class="sendnote" id="sendNote">กดส่งแล้ว ไลน์จะเปิดขึ้นมา<br>ให้ที่รักส่งคำตอบหาเขาได้เลย</p>
+  <p class="sendnote" id="sendNote">กดแล้วจะมีรายชื่อในไลน์ขึ้นมา<br>เลือกชื่อ “เขา” แล้วกดส่งได้เลยนะ 💗</p>
 </div></section>
 
 <section class="scene" id="s-end"><div class="inner">
@@ -799,10 +799,13 @@ $('#sendAns').onclick=async e=>{
   const text=`💌 คำตอบจากที่รัก · ครบรอบ 1 ปี ☄️\n\n💗 รักเขา: ${love}/10 ${'❤️'.repeat(Math.min(love,10))}\n💍 จะรอเขาไหม: ${waitAns||'รอสิ'}\n🌠 ปีหน้าอยากทำด้วยกัน: ${[...pick2].join(', ')||'-'}\n🫶 อยากบอกเขา: ${[...pick3].join(', ')||'-'}${msg?`\n\n📝 ${msg}`:''}`;
   const[x,y]=center(e.currentTarget);play('burst',x,y,220);pop(x,y,30,{up:true});
   let sent=false;
-  if(liffReady&&liff.isInClient()){try{await liff.sendMessages([{type:'text',text}]);sent=true}catch(err){}}
+  /* LINE's own friend/chat list pops up, she picks เขา and sends */
+  if(liffReady&&(liff.isInClient()||liff.isLoggedIn())&&liff.isApiAvailable('shareTargetPicker')){
+    try{const res=await liff.shareTargetPicker([{type:'text',text}],{isMultiple:false});
+      if(!res){$('#sendNote').innerHTML='ยังไม่ได้ส่งเลยน้า 🥺<br>กดอีกครั้ง แล้วเลือกชื่อ “เขา” นะ';return}sent=true}catch(err){}}
   if(!sent){try{await navigator.clipboard.writeText(text)}catch(_){}
     const url='https://line.me/R/share?text='+encodeURIComponent(text);const w=window.open(url,'_blank');if(!w)location.href=url}
-  $('#sendNote').textContent=sent?'ส่งถึงเขาแล้วนะ 💗':'ถ้าไลน์ไม่เปิด ข้อความถูกคัดลอกไว้แล้ว วางในแชทได้เลยนะ';
+  $('#sendNote').textContent=sent?'ส่งถึงเขาแล้วนะ 💗':'ถ้ารายชื่อไม่ขึ้น ข้อความถูกคัดลอกไว้แล้ว ไปวางในแชทของเขาได้เลยนะ';
   await sleep(sent?1400:2200);toEnd()};
 function toEnd(){if(cur.id==='s-end')return;go('#s-end');tick();setInterval(tick,1000);rain(60);onBeatFns.push(()=>{if(cur.id==='s-end'&&Math.random()<.4)play('burst',rand(30,W-30),rand(80,H-80),rand(90,150))})}
 /* coming back from LINE share */
